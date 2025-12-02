@@ -1,4 +1,4 @@
-import { FaStar, FaBoxOpen, FaBook } from "react-icons/fa";
+import { FaStar, FaBoxOpen } from "react-icons/fa";
 import useProductFetch from "../Hook/useProductFetch";
 import Container from "../Components/Container";
 import Card from "../Components/Card/Card";
@@ -15,36 +15,55 @@ const Home = () => {
   const ArrivalsData = Arrivals?.data;
 
   return (
-    <div className="min-h-screen bg-white text-[#0F172A]">
+    <div className="min-h-screen bg-base-100">
       <Container>
-        {/* slider  */}
-        <Carousel />
-        {/* Popular Toys Section */}
-        <section className="py-8">
-          <h2 className="text-2xl font-bold text-[#FF6B6B] mb-4 flex items-center">
-            <FaStar className="mr-2" /> Popular Toys
-          </h2>
+        <div data-aos="fade-down">
+          <Carousel />
+        </div>
+
+        <section className="py-12 md:py-16">
+          <div className="flex items-center gap-3 mb-8" data-aos="fade-up">
+            <FaStar className="text-primary text-3xl" />
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">
+              Popular Toys
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sliceData?.map((cardData) => (
-              <Card key={cardData?.id} cardData={cardData} />
+            {sliceData?.map((cardData, index) => (
+              <div
+                key={cardData?.id}
+                data-aos="fade-up"
+                data-aos-delay={100 + index * 100}>
+                <Card cardData={cardData} />
+              </div>
             ))}
           </div>
         </section>
 
-        {/* New Arrivals Section */}
-        <section className="mt-8">
-          <h2 className="text-2xl font-bold text-[#0F172A] mb-4 flex items-center">
-            <FaBoxOpen className="mr-2" /> New Arrivals
-          </h2>
+        <section className="py-12 md:py-16">
+          <div className="flex items-center gap-3 mb-8" data-aos="fade-up">
+            <FaBoxOpen className="text-secondary text-3xl" />
+            <h2 className="text-3xl md:text-4xl font-bold text-base-content">
+              New Arrivals
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ArrivalsData?.map((Arrivals) => (
-              <Arrival key={Arrivals?.id} Arrivals={Arrivals} />
+            {ArrivalsData?.map((item, index) => (
+              <div
+                key={item?.id}
+                data-aos="fade-up"
+                data-aos-delay={100 + index * 100}>
+                <Arrival Arrivals={item} />
+              </div>
             ))}
           </div>
         </section>
 
-        {/* Our Story Section */}
-        <OurStory />
+        <div data-aos="fade-up">
+          <OurStory />
+        </div>
       </Container>
     </div>
   );
