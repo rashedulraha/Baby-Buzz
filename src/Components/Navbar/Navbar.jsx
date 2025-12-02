@@ -50,11 +50,8 @@ const Navbar = ({
         <>
           <Link to={"/profile"} className="relative group">
             <img
-              src={
-                user.user_metadata?.avatar_url ||
-                `https://cdn-icons-png.flaticon.com/512/428/428573.png`
-              }
-              alt={user.user_metadata?.name || user.displayName || "User"}
+              src={user.photoURL}
+              alt={user.displayName || "User"}
               className="w-10 h-10 rounded-full border-2 border-[#FF6B6B] cursor-pointer"
               onError={(e) => {
                 e.target.src = "/default-avatar.png";
