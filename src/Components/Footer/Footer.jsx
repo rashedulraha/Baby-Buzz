@@ -1,3 +1,4 @@
+import React from "react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -5,204 +6,167 @@ import {
   FaYoutube,
   FaPinterest,
   FaHeart,
+  FaLinkedinIn,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Container from "../Container";
-import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className=" text-[#0F172A] py-10 border-t border-yellow-500">
+    <footer className="bg-base-200 text-base-content border-t border-base-300">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-start mb-10">
-          {/* Logo Section */}
-          <div className="mb-8 md:mb-0 md:w-1/4">
-            <div className="flex items-center mb-4">
-              <div className="bg-[#FF6B6B] w-10 h-10 rounded-lg flex items-center justify-center text-white mr-3">
-                <FaHeart className="text-xl" />
+        <div className="py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+            {/* Logo & Description */}
+            <div className="md:col-span-1">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-primary-content shadow-lg">
+                  <FaHeart className="text-2xl" />
+                </div>
+                <h3 className="text-2xl font-bold">BabyBuzz</h3>
               </div>
-              <h3 className="text-2xl font-bold"> BabyBuzz</h3>
-            </div>
-            <p className="text-gray-600 mb-4">
-              Your magical destination for toys that spark joy and imagination.
-            </p>
-            <div className="flex space-x-3">
-              <Link
-                to={"https://www.facebook.com/rashedulraha"}
-                className="bg-[#FF6B6B] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#FF5252] transition">
-                <FaFacebookF />
-              </Link>
-              <Link
-                to={"https://www.instagram.com/rashedulraha/"}
-                className="bg-[#FF6B6B] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#FF5252] transition">
-                <FaInstagram />
-              </Link>
-              <Link
-                to={"https://x.com/rashedulraha"}
-                className="bg-[#FF6B6B] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#FF5252] transition">
-                <FaTwitter />
-              </Link>
-            </div>
-          </div>
+              <p className="text-base-content/70 mb-6 leading-relaxed">
+                Your magical destination for toys that spark joy and
+                imagination.
+              </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:w-3/4">
+              {/* Social Icons */}
+              <div className="flex gap-3">
+                <a
+                  href="https://facebook.com/rashedulraha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center hover:bg-primary/80 transition shadow-md">
+                  <FaFacebookF />
+                </a>
+                <a
+                  href="https://instagram.com/rashedulraha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center hover:bg-primary/80 transition shadow-md">
+                  <FaInstagram />
+                </a>
+                <a
+                  href="https://twitter.com/rashedulraha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-primary text-primary-content rounded-full flex items-center justify-center hover:bg-primary/80 transition shadow-md">
+                  <FaTwitter />
+                </a>
+              </div>
+            </div>
+
+            {/* BabyBuzz Links */}
             <div>
-              <h4 className="font-bold text-lg text-[#FF6B6B] mb-4 flex items-center">
-                <span className="bg-[#FF6B6B] w-1 h-5 mr-2"></span>
+              <h4 className="font-bold text-lg mb-5 flex items-center gap-3">
+                <span className="w-1 h-6 bg-primary rounded-full"></span>
                 BabyBuzz
               </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Toys
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Sellers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Categories
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Brands
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Support
-                  </Link>
-                </li>
+              <ul className="space-y-3 text-base-content/70">
+                {["Toys", "Sellers", "Categories", "Brands", "Support"].map(
+                  (item) => (
+                    <li key={item}>
+                      <Link
+                        to="/"
+                        className="hover:text-primary transition flex items-center gap-2">
+                        <span className="text-primary">›</span> {item}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
+
+            {/* Resources */}
             <div>
-              <h4 className="font-bold text-lg text-[#FF6B6B] mb-4 flex items-center">
-                <span className="bg-[#FF6B6B] w-1 h-5 mr-2"></span>
+              <h4 className="font-bold text-lg mb-5 flex items-center gap-3">
+                <span className="w-1 h-6 bg-primary rounded-full"></span>
                 Resources
               </h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Community
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Events
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Reviews
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <span className="mr-2">›</span> Guides
-                  </Link>
-                </li>
+              <ul className="space-y-3 text-base-content/70">
+                {["Community", "Events", "Blog", "Reviews", "Guides"].map(
+                  (item) => (
+                    <li key={item}>
+                      <Link
+                        to="/"
+                        className="hover:text-primary transition flex items-center gap-2">
+                        <span className="text-primary">›</span> {item}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
+
+            {/* Connect */}
             <div>
-              <h4 className="font-bold text-lg text-[#FF6B6B] mb-4 flex items-center">
-                <span className="bg-[#FF6B6B] w-1 h-5 mr-2"></span>
+              <h4 className="font-bold text-lg mb-5 flex items-center gap-3">
+                <span className="w-1 h-6 bg-primary rounded-full"></span>
                 Connect
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-4 text-base-content/70">
                 <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <FaFacebookF className="mr-2" /> Facebook
-                  </Link>
+                  <a
+                    href="#"
+                    className="hover:text-primary transition flex items-center gap-3">
+                    <FaFacebookF /> Facebook
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <FaInstagram className="mr-2" /> Instagram
-                  </Link>
+                  <a
+                    href="#"
+                    className="hover:text-primary transition flex items-center gap-3">
+                    <FaInstagram /> Instagram
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <FaTwitter className="mr-2" /> Twitter
-                  </Link>
+                  <a
+                    href="#"
+                    className="hover:text-primary transition flex items-center gap-3">
+                    <FaTwitter /> Twitter
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <FaYoutube className="mr-2" /> YouTube
-                  </Link>
+                  <a
+                    href="#"
+                    className="hover:text-primary transition flex items-center gap-3">
+                    <FaYoutube /> YouTube
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to={"/"}
-                    className="text-gray-600 hover:text-[#FF6B6B] transition flex items-center">
-                    <FaPinterest className="mr-2" /> Pinterest
-                  </Link>
+                  <a
+                    href="#"
+                    className="hover:text-primary transition flex items-center gap-3">
+                    <FaPinterest /> Pinterest
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
 
-        <div className="border-t border-gray-300 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-600 mb-4 md:mb-0">
+          {/* Bottom Section */}
+          <div className="border-t border-base-300 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-base-content/60">
+            <p>
               © 2024{" "}
-              <Link
-                className="text-info"
-                to={"https://www.linkedin.com/in/rashedulraha/"}>
+              <a
+                href="https://www.linkedin.com/in/rashedulraha/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary hover:underline">
                 Rashedul Islam
-              </Link>
-              . All rights reserved
+              </a>
+              . All rights reserved.
             </p>
-            <div className="flex flex-wrap justify-center space-x-4">
-              <Link
-                to={"/"}
-                className="text-[#4D96FF] hover:text-[#FF6B6B] transition text-sm">
-                Privacy policy
+
+            <div className="flex gap-6 mt-4 md:mt-0">
+              <Link to="/" className="hover:text-primary transition">
+                Privacy Policy
               </Link>
-              <Link
-                to={"/"}
-                className="text-[#4D96FF] hover:text-[#FF6B6B] transition text-sm">
-                Terms of service
+              <Link to="/" className="hover:text-primary transition">
+                Terms of Service
               </Link>
-              <Link
-                to={"/"}
-                className="text-[#4D96FF] hover:text-[#FF6B6B] transition text-sm">
-                Cookie settings
+              <Link to="/" className="hover:text-primary transition">
+                Cookie Settings
               </Link>
             </div>
           </div>

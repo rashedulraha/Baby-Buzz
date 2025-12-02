@@ -53,7 +53,7 @@ const Navbar = ({
             />
             <div className="absolute -top-1 -right-1 bg-success w-4 h-4 rounded-full border-2 border-base-100"></div>
 
-            <div className="absolute top-full right-0 mt-2 px-4 py-2 bg-base-100 border border-base-300 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50 min-w-[160px]">
+            <div className="absolute top-full right-0 mt-2 px-4 py-2 bg-base-100 border border-base-300 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50 min-w-40">
               <p className="text-sm font-medium text-base-content truncate">
                 {user.user_metadata?.name || user.displayName || user.email}
               </p>
