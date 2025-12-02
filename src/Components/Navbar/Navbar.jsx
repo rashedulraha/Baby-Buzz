@@ -12,6 +12,7 @@ import {
 
 import AuthContext from "../../AuthContext/AuthContext";
 import { toast } from "react-toastify";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Navbar = ({
   logo = "BabyBuzz",
@@ -46,6 +47,7 @@ const Navbar = ({
 
   const AuthButtons = () => (
     <div className="flex items-center gap-3">
+      <ThemeToggle />
       {user ? (
         <>
           <Link to={"/profile"} className="relative group">

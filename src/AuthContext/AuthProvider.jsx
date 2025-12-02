@@ -124,7 +124,6 @@ const AuthProvider = ({ children }) => {
     try {
       await signOut(auth);
       setUser(null);
-      toast.success("Logged out successfully!");
     } catch (error) {
       toast.error("Logout failed: " + error.message);
       throw error;

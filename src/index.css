@@ -5,7 +5,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import "tailwindcss";
-@plugin "daisyui";
 
 body {
   font-family: "Baloo 2", sans-serif;
@@ -15,10 +14,57 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
-.nvaLinkStyle {
+/* .nvaLinkStyle {
   @apply flex items-center gap-2 text-[#0F172A] hover:text-[#FF6B6B] transition;
 }
 
 .active {
   @apply text-[#FF6B6B];
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Baloo+2:wght@400..800&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  --prefersdark: true;
+  --color-primary: #ff6b6b;
+  --color-secondary: #ffd93d;
+  --color-accent: #4d96ff;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #f8fafc;
+  --color-base-300: #e5e7eb;
+  --color-base-400: #ffffff;
+
+  --color-text-main: #1a252f;
+  --color-text-soft: #6b7280;
+
+  --color-error: #ff4d4d;
+  --color-success: #22c55e;
+
+  --color-footer: #343a40;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+
+  --color-primary: #ff5c5c;
+  --color-secondary: #f4c430;
+  --color-accent: #4da3ff;
+
+  --color-base-100: #1a1f2b;
+  --color-base-200: #0f141d;
+  --color-base-300: #333a46;
+  --color-base-400: #1a1f2b;
+
+  --color-text-main: #f3f4f6;
+  --color-text-soft: #a6a6a6;
+
+  --color-error: #ff3b3b;
+  --color-success: #32d374;
+
+  --color-footer: #11151e;
 }
