@@ -32,4 +32,4 @@ git clone
 cd <project-name>
 ```
 
-### live link : https://babybuzzrashed.netlify.app/
+### live link : [https://babybuzzrashed.netlify.app/](https://baby-buzz.vercel.app/)
